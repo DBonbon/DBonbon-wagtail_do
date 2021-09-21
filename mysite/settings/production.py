@@ -8,8 +8,8 @@ ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
 # https://developers.google.com/recaptcha/docs/faq
 
 # Recapcha settings
-RECAPTCHA_PUBLIC_KEY = os.environ.get("RECAPTCHA_PUBLIC_KEY")
-RECAPTCHA_PRIVATE_KEY = os.environ.get("RECAPTCHA_PRIVATE_KEY")
+RECAPTCHA_PUBLIC_KEY = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" # "os.environ.get('RECAPTCHA_PUBLIC_KEY')"
+RECAPTCHA_PRIVATE_KEY = "6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe" # "os.environ.get("RECAPTCHA_PRIVATE_KEY")
 NOCAPTCHA = True
 SILENCED_SYSTEM_CHECKS = ["captcha.recaptcha_test_key_error"]
 

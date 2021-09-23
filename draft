@@ -1,0 +1,21 @@
+server {
+    listen 80;
+    server_name 164.90.181.161;
+    charset     UTF-8;
+
+    error_log   /home/newuser/venv/log/gunicorn-error.log;
+    access_log  /home/newuser/venv/log/gunicorn-access.log;
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location /static/ {
+        root /home/newuser/mysite;
+    }
+    location /media/ {
+        root /home/newuser/mysite;
+    }
+
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/home/newuser/env/run/gunicorn.sock;
+    }
+}
